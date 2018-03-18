@@ -72,7 +72,7 @@ class Ubbr(object):
         template +=template_fragments.pop(0)
         counter = 0
         while len(template_fragments)>0:
-            template +="{{ {var_name}.".format(var_name=self.context_variable_name)+str(counter)+" }}"+template_fragments.pop(0)
+            template +="{{{{ {var_name}.".format(var_name=self.context_variable_name)+str(counter)+" }}"+template_fragments.pop(0)
             counter+=1
         return [template,code_fragments]
 
